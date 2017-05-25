@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body ng-controller="ChartsController as chartsCtrl">
+    <div class='container'>
+        <div class='jumbotron'>
+            <h1>The State of the United States</h1>
+            <p class='lead'>See census data from 2007-2015</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="chart in chartsCtrl.charts">
+              <h2>{{chart.name}}</h2>
+              <canvas id="line" class="chart chart-line" chart-data="chart.data" chart-labels="chart.labels"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <!-- endbower -->
+    <script src="app/app.module.js"></script>
+    <script src="app/charts/charts.controller.js"></script>
+    <script src="app/charts/inqstats.factory.js"></script>
+</body>
+</html>
